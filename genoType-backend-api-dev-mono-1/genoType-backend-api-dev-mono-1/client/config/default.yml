@@ -1,0 +1,9 @@
+server:
+  URL: 'redis://localhost:6379'
+
+database:
+  type: 'mongodb'
+  username: ''
+  password: ''
+  uri: 'mongodb://localhost:27017/genotype-dev'
+  database: 'genotype-dev'

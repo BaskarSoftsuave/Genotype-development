@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box;
+}
+
+// /*body {
+//   margin: 0;
+//   font-family: Arial, Helvetica, sans-serif;
+// }*/
+.topnav {
+    position: relative;
+    /*  background-color:#cfd8dc;*/
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #2196F3;
+    color: white;
+}
+
+
+.topnav .search-container {
+    float: right;
+    border: darkgray;
+}
+
+.topnav input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+}
+
+.topnav .search-container button {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+    background: #ccc;
+}
+
+table {
+    margin-top: 40px;
+    width: 95%;
+    /*box-shadow: 0px 0px 0px 5px rgba( 255, 255, 255, 0.4), 0px 4px 20px rgba( 0, 0, 0, 0.33);*/
+}
+
+h1 {
+    font-family: Georgia;
+    font-size: 30px;
+    color: limegreen;
+    width: 100%;
+    margin: 20px;
+}
+
+th {
+    color: darkgray;
+    border-bottom: 1px solid #b3b3b352;
+}
+
+i {
+    margin: 2px;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav .search-container {
+        float: none;
+    }
+    .topnav a,
+    .topnav input[type=text],
+    .topnav .search-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .topnav input[type=text] {
+        border: 1px solid #ccc;
+    }
+}
+.pagination {
+  width: 40%;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left:60%;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  margin-left: 4px;
+}
+
+.pagination a.active {
+  background-color: #1FB622;
+  color: white;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+// MB Scss ----------------------------------------------------------->
+.topnav {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 19vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    a.active {
+        background-color: #2196F3;
+        color: white;
+    }
+    .topnav-licence-heading {
+        font-family: Outfit;
+        font-size: 30px;
+        color:VAR(--border-blue);
+        width: 100%;
+        font-weight: 500;
+    }
+    .topnav-licence-body {
+        font-family: Outfit;
+        font-size: 25px;
+        color:var(--dark-blue);
+        margin-left: 5px;
+    }
+    ::placeholder{
+        color: var(--blue);
+    }
+    .topnav-right-wrapper {
+            display: flex;
+            .topnav-searchbox-wrapper {
+            margin-right: 15px;
+            // border: 1px solid #33333361;
+            // border-radius: 3px;
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+             border-radius: 5px;
+            input {
+                border: none; 
+                padding-left: 15px;
+                font-size: 14px;
+                min-width: 290px;
+                color: #2b2d42c2;
+                padding: 8px;
+                background-color: #ffffff;
+                width: 92%;
+                border: none;
+                border-radius: 25px !important;
+            }
+            input:focus {
+                outline: none;
+            }
+            button {
+                border: none;
+                margin: 0;
+                padding-right: 10px;
+                color: #2b2d42c2;
+            }
+            .topnav-search-icon {
+                background-color: #fff;
+            }
+            .icon-search{
+                color: #2b2d42c2;
+            }
+        }
+        .topnav-addnew-wrap {
+            padding: 8px 20px;
+            color: #fff;
+            border-radius: 23px;
+            cursor: pointer;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+            background-color:var(--blue);
+            border: 1px solid var(--blue);
+        }
+    }
+}
+
+.user-table-wrapper {
+    border: 1px solid var(--border-blue);
+    
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    table {
+        margin-top: 0px;
+        width: 100%;
+        //border-radius: 10px;
+
+        th:first-child {
+            border-radius: 10px 0px 0 0;
+        }
+        th:last-child{
+            border-radius: 0px 10px 0 0;
+        }
+    }
+    table td {
+        padding: 14px 0;
+        border-bottom: 1px solid #E8E8E8;
+        font-size: 15px;
+        width: 12%;
+        padding-left: 40px;
+        font-family: Outfit;
+        font-weight: 500;
+        color: #081641;
+        //border-radius: 10px;
+    }
+    .user-table-head {
+        padding-left: 40px;
+        font-family: Outfit;
+        font-size: 18px;
+        font-weight: 500;
+        color: #081641;
+        padding-left: 40px;
+        background-color: var(--light-blue);
+        //border-radius: 10px;
+        border-bottom: 1px solid var(--border-blue);
+       
+    }
+    .mat-header-row {
+        background-color: #ffffff;
+        border-radius: 10px;
+       
+    }
+    .licence-action-icons {
+        padding: 7px;
+        border-radius: 5.5px;
+    }
+    .action-icon-edit {
+        background-color: #FCEDD6;
+    }
+    .action-icon-delete {
+        background-color: #ff6b811f;
+        margin-left: 12px;
+    }
+    .table-wrap{
+        height: 62vh;
+        overflow: auto;
+        
+    }
+}
+::ng-deep {
+  .main-content {
+    padding: 0px 30px;
+    background-color: #ffffff;
+    height: calc(100vh - 60px);
+  }
+}
+
+.mat-input {
+  font: inherit;
+  background: transparent;
+  color: currentColor;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  /* width: 100%; */
+ // max-width: 100%;
+  vertical-align: bottom;
+  text-align: inherit;
+  box-sizing: content-box;
+}

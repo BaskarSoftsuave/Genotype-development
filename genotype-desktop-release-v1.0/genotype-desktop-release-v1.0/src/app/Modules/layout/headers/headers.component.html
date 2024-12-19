@@ -1,0 +1,62 @@
+<!-- <head>
+
+  <title>Font Awesome Icons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head> -->
+
+
+<div class="header-wrapper">
+  <div class="left-sec">
+    <!-- <p class="header-logo-text"> GenoTyping Analysis</p>-->
+    <img src="assets/img/licence-logo.svg" class="header-logo" alt="" width="203" height="31">
+
+    <div class="menu-actions">
+
+    </div>
+    <div class="mail-icon">
+      <!--      <i class="mat-icon icon-bubbles" matTooltip="{{'Messages'}}">home header-menu-active </i>-->
+    </div>
+  </div>
+
+  <div class="middle-sec">
+  </div>
+
+  <div class="right-sec">
+    <!-- <div *ngIf="showLicenceExpireMessage && licenceExpireMessage">
+      <span>
+        {{licenceExpireMessage}}
+      </span>
+    </div> -->
+
+    <div>
+      <mat-card class = "topnav-right-wrapper  userProfile">
+        <mat-card-title>
+          <div class='userDataContainer'>
+            <div class="uprofile-img-wrap">
+              <span><img src="assets/img/download.png" class="rounded-circle" width="40" height="40" alt="User"/></span>
+            </div>
+            <div class='userNameContainer'>
+             <span  style="color: #ffffff;">{{username}}</span>
+             <span  class="email-text">{{email}}</span> 
+            </div>
+
+            <a mat-button data-menu-element [matMenuTriggerFor]="menu" >  <span>  <i data-menu-element class="fa fa-cog setting-icon"></i></span></a>
+
+            <mat-menu data-menu-element class ="header-dropdown-menu header-dropdown-menu-wrap header-drop-down-wrap" #menu="matMenu">
+          <button data-menu-element mat-menu-item> <img src="assets/img/download.png" class="rounded-circle" width="32" height="32" alt="User" style="border-radius:50%; margin-right: 20px;" />  {{email}} </button>
+          <button data-menu-element mat-menu-item (click)="open('Profile')">Profile</button>
+          <button data-menu-element mat-menu-item (click)="open('Change Password')">Change Password</button>
+              <button data-menu-element mat-menu-item (click)="open('Licence Validity')" > Licence Validity</button>
+        <button data-menu-element mat-menu-item  id ='loggout-btn' style="color:var(--red); font-size: 16px; font-weight: 500; justify-content: center;"  ><span (click)="logout()"> Log Out</span></button>
+        </mat-menu>
+
+          </div>
+        </mat-card-title>
+
+
+      </mat-card>
+    </div>
+  </div>
+</div>
+

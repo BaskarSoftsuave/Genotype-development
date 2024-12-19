@@ -1,0 +1,153 @@
+@import '../../../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+  margin: 8px;
+}
+
+
+/**  Copyright 2021 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license */
+.mat-card{
+  box-sizing: border-box;
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  opacity:1;
+  padding: 20px;
+ // background: lightgrey;
+  box-shadow:
+    0px 0px 0px 5px rgba( 255,255,255,0.4 ),
+    0px 4px 20px rgba( 0,0,0,0.33 );
+}
+button{
+  margin-top: 10px;
+  /*border-radius: 20px;*/
+  /*border: 1px solid #4CAF50;
+  background-color: #4CAF50;*/
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  /*padding: 12px 45px;*/
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+// MB Scss ----------------------------------------------------------->
+
+
+::ng-deep {
+  .cdk-overlay-dark-backdrop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #00000094;
+  }
+  .mat-dialog-container {
+    position: absolute;
+    max-height: 100vh;
+    top: 0;
+    left: 0;
+    margin: auto;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.delete-user-mat-card {
+  width: 360px;
+  height: auto;
+  padding-bottom:65px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+
+  .delete-user-head-wrap {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+
+    .delete-user-head-text{
+      font-family: Poppins;
+      font-size: 20px;
+      color: #2b2d42bd;
+      margin-bottom: 5px;
+    }
+  }
+.close{
+  cursor: pointer;
+}
+  .delete-user-content-wrap {
+    display: flex;
+    padding: 1px 18px;
+    justify-content: space-between;
+
+    .delete-user-mat-btn-wrap {
+      width: 128px;
+      height: 40px;
+      font-family: 'Poppins';
+    }
+    .delete-user-mat-btn-cancle {
+      border: 1px solid #DD1747;
+      color: #ffffff;
+      background: #DD1747;
+      
+    }
+    .delete-user-mat-btn-yes{
+      background-color: #1FB622;
+      color: #FBFAFB;
+      margin-left: 0px;
+    }
+  }
+}
+
+i{
+  color: #2b2d42bd;
+  margin-left: 92%;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+
+
+@media only screen and (max-width: 600px){
+  ::ng-deep {
+    .delete-user-mat-card {
+      width: calc(100vh - 437px);
+    }
+
+    .delete-user-head-text {
+      font-family: Poppins;
+      font-size: 18px;
+    }
+
+    .delete-user-mat-btn-wrap {
+      width: 118px;
+      height: 37px;
+      font-family: "Poppins";
+    }
+  }
+}

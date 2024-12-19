@@ -1,0 +1,104 @@
+/*mat-card{
+  position: center;
+  margin-top: 6%;
+  margin-left: 35%;
+}*/
+img{
+  border-radius: 50%;
+}
+h1{
+  margin-left: 10%;
+  color: #2B2D42;
+}
+
+input{
+  // margin-top: 5%;
+  padding : 8px 8px;
+  width:30%;
+  border-color:lightgray;
+}
+
+// MB Scss ----------------------------------------------------------->
+
+
+ .profile-Wrapper {
+   height: calc(100vh - 60px);
+   display: flex;
+   justify-content: center;
+   .profile-mat-card {
+     width: 30%;
+     height: calc(100vh - 160px);
+     margin-top: 30px;
+     .profile-img-wrap {
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       margin-bottom: 12px;
+     }
+     .profile-head-text {
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       margin-bottom: 22px;
+       p {
+         font-weight: 600;
+         font-size: 28px;
+         margin: 0px;
+         color:var(--blue);
+         margin-top: 10px;
+       }
+     }
+     .profile-input-container-wrap {
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       row-gap: 18px;
+       padding: 22px;
+       background: rgba(255, 255, 255, 0.7);
+       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      //  height: calc(100vh - 560px);
+       input.profile-input-area {
+         width: 100%;
+         padding: 8px 12px;
+         background: inherit;
+         border: none;
+         border-bottom: 1px solid var(--blue);
+         font-weight: 600;
+       }
+       input{
+         color: #2b2d428c;
+       }
+       input:focus-visible {
+         outline: none;
+       }
+       ::-webkit-input-placeholder{
+         color: #2b2d4250;
+         font-family: 'Poppins';
+         font-weight: 500;
+         font-size: 12px;
+       }
+       .profile-input-wrap{
+        display: flex;
+       }
+       .profile-input-label-text{
+        width: 200px;
+        font-weight: 400;
+        font-size: 18px;
+        color:var(--rgb);
+        font-family: Outfit;
+       }
+     }
+   }
+ }
+
+@media screen and (max-width: 1280px){
+  .profile-Wrapper .profile-mat-card {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .profile-Wrapper .profile-mat-card-res {
+    width: 50%;
+  }
+}

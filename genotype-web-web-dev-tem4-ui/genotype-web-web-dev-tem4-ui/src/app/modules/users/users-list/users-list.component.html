@@ -1,0 +1,61 @@
+
+<!-- <head>
+
+  <title>Font Awesome Icons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="profile-page parent"> -->
+<div>
+  <div class="topnav">
+    <div class="user-list-left-licence">
+      <h1 class="user-list-headtext-user">User </h1>
+    </div>
+    <div class="user-list-right-wrapper">
+      <input  matInput  (keyup.enter)="applyFilter($event)" type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+    <div>
+    </div>
+  </div>
+  <div class="user-list-table-wrapper">
+    <table style="border-spacing: 0px;">
+      <tr>
+      <tr class="user-list-table-head-wrapper">
+        <th class="user-list-table-head " (click)="sorting()"> Company Name
+          <i [ngClass]="ascSort ? 'fa fa-arrow-up' : 'fa fa-arrow-down'"> </i>
+        </th>
+        <th class="user-list-table-head">First Name</th>
+        <th class="user-list-table-head">Last Name</th>
+        <th class="user-list-table-head">Email Address</th>
+        <th class="user-list-table-head">Action</th>
+      </tr>
+      <tr *ngFor="let item of dataExt">
+        <td [attr.rowspan]="item.stateSpan" *ngIf="item.stateSpan" style="color: #081641;font-weight: 600;cursor:pointer;">
+          {{ item.companyName}}
+          <div>
+            <button type ="submit"  (click)="openModal(item);" class="user-table-add-new-btn">
+              <i class="fa fa-plus action-icon-add licence-action-icons" aria-hidden="true"> </i> Add New
+            </button>
+          </div>
+        </td>
+        <td style="cursor:pointer;">{{ item.pairs.first_name }}</td>
+        <td style="cursor:pointer;">{{ item.pairs.last_name }}</td>
+        <td style="cursor:pointer;">{{ item.pairs.email}}</td>
+        <td style="cursor:pointer;">
+          <i class="fa fa-edit action-icon-edit user-action-icons" style="color:#FFA502" (click)="edit(item)"></i>
+          <span>
+    <i class="fa fa-trash-o action-icon-delete user-action-icons"  style="color:#FF6B81" (click)="close(item)" ></i>
+      </span>
+        </td>
+      </tr>
+    </table>
+    <mat-paginator class="paginator-design" [pageSizeOptions]="pageSizeOptions" showFirstLastButtons (page)="onChange($event)"
+                   [length]="usersListCount" [pageSize]="itemsPerPage"></mat-paginator>
+  </div>
+
+
+</div>
+
+
+

@@ -1,0 +1,173 @@
+
+<div class="data-collection-wrapper">
+<mat-card class="data-collection-content-wrap">
+<mat-card-title>
+  <div class="data-collection-head-wrap">
+   <p >
+   <span >  Data Collection </span>
+  </p>
+  <p ><i (click)="BackToNew()" class="fa fa-times close" mat-dialog-close aria-hidden="true"></i>  </p>
+  </div>
+</mat-card-title>
+
+  <mat-card-content  class="add-project-content-wrap" [formGroup]="dataForm" file-drop="submit($event)">
+    <ul>
+      <li>
+        <div class="form-group add-project-form-wrap add-project-instrument-name-wrap">
+          <label class="add-project-label-text">Instrument Name<span style="color: #dc3545"> *</span>
+          </label>
+<!--          <input type="text"  class="form-control instrument_name" pattern="\S(.*\S)?" formControlName="instrument"  [ngClass]="{'is-invalid': submitted && f.instrument.errors}">-->
+          <select class="form-control instrument_name" formControlName="instrument" [ngClass]="{'is-invalid': submitted && f.instrument.errors}">
+            <option value="Tecan">Tecan</option>
+            <option value="Berthold">Berthold</option>
+            <option value="Molecular Devices">Molecular Devices</option>
+            <option value="Perkin Elmer">Perkin Elmer</option>
+            <option value="Biotek">Biotek</option>
+            <option value="BMG">BMG</option>
+            <option value="Custom">Custom</option>
+          </select>
+          <div *ngIf="submitted && f.instrument.errors" class = "invalid-feedback">
+            <br><div *ngIf="submitted && f.instrument.errors.required"></div>
+            <div *ngIf="submitted && f.instrument.errors.pattern"></div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="form-group add-project-form-wrap add-project-instrument-name-wrap">
+          <label class="add-project-label-text">File type<span style="color: #dc3545"> </span>
+          </label>
+          <select readonly class="form-control instrument_name" (change)="changeFileType()"  [(ngModel)]="fileType" [ngModelOptions]="{standalone: true}" >
+            <!-- <option value="" selected="selected" disabled>select file type</option> -->
+            <option readonly value="1" selected="selected">file type 1</option>
+            <option readonly value="2">file type 2</option>
+            <!-- <option value="addNewFileType">Add file type</option> -->
+          </select>
+        </div>
+      </li>
+
+      <li>
+        <div class="form-group add-project-form-wrap add-project-type-wrap">
+          <label class="add-project-label-text">FAM<span style="color: #dc3545">*</span></label>
+          <input type="text" class="form-control project_type_start" formControlName="femStart" pattern="\S(.*\S)?" [ngClass]="{'is-invalid': submitted && f.femStart.errors}">
+          <div *ngIf="submitted && f.femStart.errors" class="invalid-feedback">
+            <div *ngIf="submitted && f.femStart.errors.required"></div>
+             <div *ngIf="submitted && f.femStart.errors.pattern">Pattern Example "B12,C12.. etc"</div>
+          </div>
+          <input type="text" class="form-control project_type_start" formControlName="femEnd" pattern="\S(.*\S)?" [ngClass]="{'is-invalid': submitted && f.femEnd.errors}">
+          <div *ngIf="submitted && f.femEnd.errors" class="invalid-feedback">
+            <div *ngIf="f.femEnd.errors.required"></div>
+            <span><div *ngIf="f.femEnd.errors.pattern"><p>Pattern Example "B12,C12.. etc"</p></div></span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="form-group add-project-form-wrap add-project-type-wrap">
+          <label class="add-project-label-text">HEX<span style="color: #dc3545">*</span></label>
+          <input type="text" class="form-control project_type_start" formControlName="hexStart" pattern="\S(.*\S)?" [ngClass]="{'is-invalid': submitted && f.hexStart.errors}">
+          <div *ngIf="submitted && f.hexStart.errors" class="invalid-feedback">
+            <div *ngIf="f.hexStart.errors.required"></div>
+            <div *ngIf="f.hexStart.errors.pattern">Pattern Example "B12,C12.. etc"</div>
+          </div>
+          <input type="text" class="form-control project_type_start" formControlName="hexEnd" pattern="\S(.*\S)?" [ngClass]="{'is-invalid': submitted && f.hexEnd.errors}">
+          <div *ngIf="submitted && f.hexEnd.errors" class="invalid-feedback">
+            <div *ngIf="f.hexEnd.errors.required"></div>
+            <div *ngIf="f.hexEnd.errors.pattern">Pattern Example "B12,C12.. etc"</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="form-group add-project-form-wrap add-project-type-wrap">
+          <label class="add-project-label-text">ROX<span style="color: #a18c8e">*</span></label>
+          <input type="text" class="form-control project_type_start" formControlName="roxStart" pattern="\S(.*\S)?" [ngClass]="{'is-invalid': submitted && f.roxStart.errors}">
+          <div *ngIf="submitted && f.roxStart.errors" class="invalid-feedback">
+            <div *ngIf=" f.roxStart.errors.required"></div>
+            <div *ngIf="f.roxStart.errors.pattern">Pattern Example "B12,C12.. etc"</div>
+          </div>
+          <input type="text" class="form-control project_type_start" formControlName="roxEnd" pattern="\S(.*\S)?" [ngClass]="{'is-invalid': submitted && f.roxEnd.errors}">
+          <div *ngIf="submitted && f.roxEnd.errors" class="invalid-feedback">
+            <div *ngIf="f.roxEnd.errors.required"></div>
+            <div *ngIf="f.roxEnd.errors.pattern">Pattern Example "B12,C12.. etc"</div>
+          </div>
+        </div>
+      </li>
+      <li *ngIf="graphType === 'true'">
+        <div class="form-group add-project-form-wrap add-project-type-wrap">
+          <label class="add-project-label-text">ATTO555<span style="color: #dc3545">*</span></label>
+          <input type="text" class="form-control project_type_start" formControlName="atto555Start" pattern="\S(.*\S)?" [ngClass]="{'is-invalid': submitted && f.atto555Start.errors}">
+          <div *ngIf="submitted && f.atto555Start.errors" class="invalid-feedback">
+            <div *ngIf="f.atto555Start.errors.required"></div>
+            <div *ngIf="f.atto555Start.errors.pattern">Pattern Example "B12,C12.. etc"</div>
+          </div>
+          <input type="text" class="form-control project_type_start" formControlName="atto555End" pattern="\S(.*\S)?" [ngClass]="{'is-invalid': submitted && f.atto555End.errors}">
+          <div *ngIf="submitted && f.atto555End.errors" class="invalid-feedback">
+            <div *ngIf="f.atto555End.errors.required"></div>
+            <div *ngIf="f.atto555End.errors.pattern">Pattern Example "B12,C12.. etc"</div>
+          </div>
+        </div>
+      </li>
+      <li *ngIf="graphType === 'true'">
+        <div class="form-group add-project-form-wrap add-project-type-wrap">
+          <label class="add-project-label-text">ATTO647<span style="color: #dc3545">*</span></label>
+          <input type="text" class="form-control project_type_start" formControlName="atto647Start" pattern="\S(.*\S)?" [ngClass]="{'is-invalid': submitted && f.atto647Start.errors}">
+          <div *ngIf="submitted && f.atto647Start.errors" class="invalid-feedback">
+            <div *ngIf="f.atto647Start.errors.required"></div>
+            <div *ngIf="f.atto647Start.errors.pattern">ex "B12,C12.. etc"</div>
+          </div>
+          <input type="text" class="form-control project_type_start" formControlName= "atto647End" pattern="\S(.*\S)?" [ngClass]="{'is-invalid': submitted && f.atto647End.errors}">
+          <div *ngIf="submitted && f.atto647End.errors" class="invalid-feedback">
+            <div *ngIf="f.atto647End.errors.required"></div>
+            <div *ngIf="f.atto647End.errors.pattern">Pattern Example "B12,C12.. etc"</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="data-collection-ntc-hex-atto-wrap">
+        <div class="data-collection-ntc-wrap">
+          <input type ="checkbox" (click) = toggleDisplay() /> <p> NTC Calculation </p>
+        </div>
+
+        <div *ngIf = "isShow" class="data-collection-check-box-click-wrap">
+        <label class="add-project-label-text">Cell One</label>
+          <input type="text" class="form-control hex-wrap-start" formControlName="cellOne"/>
+
+        <label class="add-project-label-text">Cell Two</label>
+          <input type="text" class="form-control hex-wrap-start" formControlName="cellTwo"/>
+
+        </div>
+        </div>
+
+    </li>
+      <li>
+        <div class="form-group add-project-form-wrap add-project-instrument-name-wrap data-collection-dragdrop-wrap">
+          <div class="data-collection-date-wrap">
+          <label class="add-project-label-text">Data<span _ngcontent-tnc-c180="" style="color: #dc3545;">*</span></label>
+          </div>
+          <div  class = "drop-n-drag-box" *ngIf="!isFileUpload">
+           <input type="file" id='file' accept=".xlsx" multiple="false" (change)="submit($event)"/>
+            <div class="drag-n-drop"> <p> Drop files here or click to upload. </p> </div>
+          <label for="file"><strong>Choose a file</strong> </label>
+           <img src="assets/img/word-icon.svg" class="drag-n-drop-icon">
+          </div>
+          <div  class = "drop-n-drag-box-active" *ngIf="isFileUpload">
+           <img src="assets/img/word_icon_active.svg" class="drag-n-drop-icon">
+           <div class="drag-n-drop" > <p> {{fileName}} </p> </div>
+            <div class="drag-n-drop-active-bottom-wrap" (click)="removeFile()">
+              <p> Remove File <span><img src="assets/img/delete_icon.svg" class="list-icon"> </span></p>
+            </div>
+         </div>
+        </div>
+      </li>
+    </ul>
+
+
+    <div  class="button-wrap">
+      <button mat-button class="mat-focus-indicator mat-button mat-button-base" (click)=proceed() type="button">
+        <span class="add-project-button-wrap" >Proceed</span>
+      </button>
+    </div>
+  </mat-card-content>
+
+</mat-card>
+
+</div>
