@@ -1,0 +1,19 @@
+server:
+  port : 8000
+  NODE_ENV: 'development'
+
+redis :
+  host: 'localhost'
+  port: 6379
+
+JWT :
+  expiresIn : 28800
+  secret : 'topSecret51'
+  defaultStrategy : 'jwt'
+
+database: 
+  type: 'mongodb'
+  username: ''
+  password: ''
+  uri: 'mongodb://localhost:27017/genotype-dev'
+  database: 'genotype-dev'

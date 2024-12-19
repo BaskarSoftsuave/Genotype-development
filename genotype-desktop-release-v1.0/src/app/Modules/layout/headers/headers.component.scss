@@ -1,0 +1,349 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header-wrapper {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:var(--blue);
+  height: 64px;
+  padding: 0 30px;
+  /*filter: drop-shadow(0px 0px 5px #00000050);*/
+  filter: drop-shadow(0px 0px 12px #0000001c);
+  .ti-menu {
+    display: none;
+  }
+  .left-sec {
+    display: inline-flex;
+    &:hover {
+      color: aqua;
+    }
+    .header-logo {
+      height: 30px;
+      filter: brightness(0) invert(1);;
+    }
+    .menu-actions {
+      display: none;
+      font-size: 24px;
+      padding-right: 15px;
+      color: #fff;
+    }
+  }
+  .middle-sec {
+    flex-basis: 420px;
+    color: #5a5a5a;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  nav a:hover {
+    color:#1FB622;
+    border-bottom: 3px solid #1FB622;
+    bottom: 6%;
+  }
+  nav.a.active{
+    color:#1FB622;
+    content: '';
+    height: 3px;
+    width: 35%;
+    background: #1FB622;
+    position: absolute;
+    left: 10%;
+    bottom: 6%;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .border {
+    border: 2px indigo dashed;
+  }
+  .d-table {
+    display: table;
+  }
+  .d-table-cell {
+    display: table-cell;
+  }
+  .w-100 {
+    width: 100%;
+  }
+  .tar {
+    text-align: right;
+  }
+  .button {
+    padding-left: 650px;
+    margin-left: 559px;
+  }
+  .login {}
+  .signup {
+    margin-right: 0px;
+    border-right-width: 15px;
+    right: 69px;
+  }
+  .mail-icon {
+    font-size: 36px;
+    color: white;
+    z-index: 100;
+    position: relative;
+    i {
+      padding-right: 23px;
+      cursor: pointer;
+      position: relative !important;
+    }
+  }
+  .rounded-circle {
+    //cursor: pointer!important;
+    border-radius: 20px;
+  }
+  .mat-menu-div {
+    height: 30px;
+  }
+  .sign-out-icon {
+    color: white;
+    padding-right: 10px;
+    cursor: pointer !important;
+    z-index: 100;
+  }
+  .convert {
+    color: white;
+    padding-right: 40px;
+    cursor: pointer !important;
+    font-size: 25px;
+  }
+  .mat-badge-content {
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    position: center;
+  }
+  .topbar .top-navbar .navbar-nav>.nav-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  .topbar .top-navbar .navbar-nav>.nav-item {
+    transition: 0.2s ease-in;
+  }
+  a {
+    /*color: #7460ee;*/
+    text-decoration: none;
+    background-color: transparent;
+  }
+  [class*=" ti-"],
+  [class^="ti-"] {
+    font-family: themify;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .topbar .top-navbar .navbar-nav>.nav-item>.nav-link {
+    line-height: 70px;
+    height: 70px;
+    padding: 0 0.75rem;
+    font-size: 19px;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+  }
+  @media (max-width: 991px) {
+    .header-wrapper {
+      .left-sec {
+        .menu-actions {
+          display: block;
+        }
+        .mail-icon {
+          display: none;
+        }
+      }
+      .right-sec {
+      }
+    }
+  }
+  .fa-address-card {
+    font-size: 28px;
+    color: white;
+  }
+  .icon-bubbles {
+    font-size: 28px;
+    color: white;
+  }
+  .icon-basket-loaded {
+    font-size: 28px;
+    color: white;
+  }
+  .fa-bell {
+    font-size: 28px;
+    color: white;
+  }
+  ::ng-deep .mail-icon .mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content {
+    right: 12px;
+    position: absolute;
+    margin: 0;
+  }
+}
+.mat-menu-item {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  line-height: 48px;
+  height: 48px;
+  padding: 0 16px;
+  text-align: left;
+  background-color: #FBFAFB;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2B2D42;
+  display: flex;
+  align-items: center;
+}
+button {
+  appearance: auto;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  box-sizing: border-box;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  padding: 1px 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-image: initial;
+}
+
+// ++ mat-menu{
+//   position: relative;
+//   color: #333;
+//   cursor: pointer;
+//   list-style: none;
+//   margin: 0;
+//   padding: 6px 8em 6px 48px;
+//   white-space: nowrap;
+//   background-color: #dddddd;
+// }
+
+.right-sec {
+  display: inline-flex;
+  align-items: center;
+  //width: 6%;
+  .header-rightsec-icon-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .user-email {
+    font-size: 15px;
+    margin-left: 4px;
+  }
+}
+
+.profile-wrapper{
+  .topnav-right-wrapper{
+    background-color: whitesmoke;
+    margin-top: 10px;
+    margin-right: 15px;
+    width: 100%;
+    i{
+      margin-left: 150px;
+      color: #2196F3;
+    }
+  }
+
+}
+
+.userProfile{
+
+  background-color: var(--blue);
+  //margin-right: 30px;
+  // width: 20%;
+  display: flex;
+  padding-right: 100%;
+  height: 50px;
+  align-items: center;
+  i{
+    margin-left:auto;
+  //  display: flex;
+  // flex-direction: column;
+  margin-top: 12px;
+    color: var(--white);
+  }
+}
+.userDataContainer{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  .uprofile-img-wrap {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+.userNameContainer {
+  display: flex;
+  //padding-right: 2%;
+  padding-left: 8%;
+  flex-direction: column;
+  
+  .email-text{
+    font-family: outfit;
+    font-weight: 500;
+    color: var(--white);
+  }
+}
+
+ mat-menu{
+  position:absolute;
+  color: #333;
+  cursor: pointer;
+  list-style: none;
+  margin: 0;
+  padding: 6px 8em 6px 48px;
+  white-space: nowrap;
+  background-color: #dddddd;
+}
+.headerIcon{
+  padding-right: 12%;
+  display: flex;
+  flex-direction: row;
+}
+::ng-deep {
+  .header-dropdown-menu-wrap {
+    position: absolute;
+    top: 60px;
+    left: 80%;
+    width: 18%;
+    box-shadow: 0px 0px 15px #0000002e;
+    transition: 0.2s ease-in;
+    background-color: #FBFAFB;
+
+    .header-dropdown-menu-btn {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+    }
+    .header-dropdown-user-btn {
+      display: flex;
+    }
+  }
+}

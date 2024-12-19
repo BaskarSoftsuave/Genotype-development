@@ -1,0 +1,33 @@
+<!-- <head>
+  <title>Font Awesome Icons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head> -->
+
+<div class="home-wrapper"  [formGroup]="licenceForm">
+<div class="container home-content-wrapper" xmlns="http://www.w3.org/1999/html">
+  <img src="assets/img/licence-center-head-logo.svg" alt="" class="home-container-head-logo">
+  <img src="assets/img/licence-bg-img.svg" alt="" class="home-licence-bg-img">
+  <p class="title">
+    Licence verification
+  </p>
+
+
+  <div class="topnav home-searchbox-wrapper">
+    <div class="licence-verify-wrapper ">
+      <input type="text" placeholder="Enter your licence number *" formControlName="licenceNumber" class="topnav-input-text"
+      [ngClass]="{'is-invalid': submitted && f.licenceNumber.errors}">
+      <div *ngIf="submitted && f.licenceNumber.errors" class="invalid-feedback">
+        <div *ngIf="f.licenceNumber.errors.required"></div>
+        </div>
+    </div>
+
+    <button type="submit" class="verify-wrap" (click)="verifyLicence()">Verify  <i class="fa fa-angle-right"></i></button>
+  </div>
+
+</div>
+
+
+<footer class="home-footer-wrap"><p>{{description}}</p></footer>
+
+</div>

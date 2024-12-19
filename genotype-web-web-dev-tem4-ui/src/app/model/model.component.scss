@@ -1,0 +1,43 @@
+/* MODAL STYLES
+-------------------------------*/
+jw-modal {
+  /* modals are hidden by default */
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: auto;
+}
+
+
+jw-modal-body {
+  padding: 10px;
+  background: green;
+
+  /* margin exposes part of the modal background */
+  margin: 10px;
+}
+
+
+.jw-modal-background {
+  /* modal background fixed across whole screen */
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  /* semi-transparent black  */
+  background-color: #000;
+  opacity: 0.3;
+
+  /* z-index must be below .jw-modal and above everything else  */
+  z-index:100;
+}
+
+
+body.jw-modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden;
+}

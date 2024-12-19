@@ -1,0 +1,60 @@
+<div class="log-wrapper" >
+  <div class="left-cover-img">
+      <!-- <img class="login-cover-bg" src="assets/img/bg-base.png"> -->
+    <img class="login-cover-img" src="assets/img/loginbg3.png">
+  </div>
+  <div class="right-login-wrapper">
+    <!-- <img class="login-page-bg-patcl-ttop login-page-bg-patcl" src="assets/img/bg-top-Ellipse 2.png">
+    <img class="login-page-logo-patcl-tmid login-page-bg-patcl" src="assets/img/bg-top-Polygon 1.png">
+    <img class="login-page-logo-patcl-tbot login-page-bg-patcl" src="assets/img/bg-top-Ellipse 1.png">
+
+    <img class="login-page-logo-patcl-btop login-page-bg-patcl" src="assets/img/bg-bot-Rectangle 687.png">
+    <img class="login-page-logo-patcl-bmidlef login-page-bg-patcl" src="assets/img/bg-bot-Ellipse 3.png">
+    <img class="login-page-logo-patcl-bmidrigt login-page-bg-patcl" src="assets/img/bg-bot-Polygon 2.png">
+    <img class="login-page-logo-patcl-bbot login-page-bg-patcl" src="assets/img/bg-bot-Ellipse 4.png"> -->
+
+
+
+    <div class="form-wrap">
+      <!-- <img class="login-page-logo" src="assets/img/login-logo.png"> -->
+
+      <form class="login-form" [formGroup]="loginForm"  (ngSubmit)="login()">
+          <div class="form-group">
+              <img class="login-text-welcom" src="assets/img/login-logo.png">
+              <h2 class="login-text-login">Login</h2>
+              <div class="form-group">
+                  <div class="email-wrap">
+                    <i class="icon-email"> </i>  <input type="text" placeholder="Email"  formControlName="email" class="form-control login-input"
+                                                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required">Email is required</div>
+                      <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <div class="email-wrap">
+                <i class="icon-password"> </i>  <input type="password" placeholder="Password" formControlName="password" class="form-control login-input"
+                                                       [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                  <div *ngIf="f.password.errors.required">Password is required</div>
+                  <!-- <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div> -->
+                </div>
+              </div>
+          </div>
+          <div class="form-group login-button-wrapper">
+              <div>
+                  <button class="mat-flat-button">Login</button>
+                  <!--<div class="bottom-btn-link">
+                      <a routerLink="" class="btn btn-link"> Don't have account ? &lt;!&ndash;<span style="color: forestgreen">Register</span>&ndash;&gt;
+                  </a>
+                  </div>-->
+              </div>
+          </div>
+      </form>
+    </div>
+
+  </div>
+</div>

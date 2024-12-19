@@ -1,0 +1,91 @@
+<div class="add-licence-wrapper">
+    <!-- Wrapper div Start MB created -->
+
+    <mat-card class="add-licence-mat-card">
+
+        <div class="Create-licence-head-wrap">
+            <p mat-dialog-title class="Create-licence-head-text">Create licence </p>
+          <i class="fa fa-close" style="font-size:22px; color:#ffff; cursor: pointer" (click)="close()"></i>
+
+        </div>
+
+        <div mat-dialog-content [formGroup]="registerForm" class="add-licence-content-wrap">
+
+            <div class="form-group add-licence-form-wrap add-licence-number-wrap">
+                <label class="add-licence-label-text">Licence number<span style="color: #dc3545"> *</span></label>
+                <input type="text" formControlName="Licence_number" class="form-control" readonly/>
+            </div>
+
+
+          <div class="form-group add-licence-form-wrap add-licence-number-wrap">
+            <label class="add-licence-label-text">Company name<span style="color: #dc3545"> *</span></label>
+            <input type="text" formControlName="company_name" class="form-control" pattern="\S(.*\S)?" required [ngClass]="{'is-invalid':submitted && f.company_name.errors}"/>
+            <div *ngIf="submitted && f.company_name.errors"  class="invalid-feedback">
+              </div>
+          </div>
+
+          <div class="form-group add-licence-form-wrap add-licence-number-wrap">
+            <label class="add-licence-label-text">Limit Of Users<span style="color: #dc3545"> *</span></label>
+            <input type="text" formControlName="no_of_user" class="form-control" pattern="\S(.*\S)?" [ngClass]="{'is-invalid':submitted && f.no_of_user.errors}"/>
+            <div *ngIf="submitted && f.no_of_user.errors"  class="invalid-feedback">
+              </div>
+          </div>
+
+            <div class="form-group add-licence-form-wrap add-licence-email-wrap">
+                <label class="add-licence-label-text">Email<span style="color: #dc3545"> *</span></label>
+                <input type="email" formControlName="email" class="form-control add-licence-email-input" [ngClass]="{'is-invalid': submitted && f.email.errors}"/>
+              <div *ngIf="submitted && f.email.errors" class = "invalid-feedback">
+              </div>
+            </div>
+
+            <div class="form-group add-licence-form-wrap add-licence-password-wrap">
+                <label class="add-licence-label-text">Password<span style="color: #dc3545"> *</span></label>
+                <input type="password" formControlName="password" class="form-control" pattern="\S(.*\S)?" [ngClass]="{'is-invalid':submitted && f.password.errors}" />
+              <div *ngIf="submitted && f.password.errors" class = "invalid-feedback">
+              </div>
+            </div>
+            <div class="form-group add-licence-form-wrap add-licence-firstname-wrap">
+                <label class="add-licence-label-text">First name<span style="color: #dc3545"> *</span></label>
+                <input type="text" formControlName="first_name" class="form-control" pattern="\S(.*\S)?" [ngClass]="{'is-invalid':submitted && f.first_name.errors}" />
+              <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+              </div>
+            </div>
+
+            <div class="form-group add-licence-form-wrap add-licence-lastname-wrap">
+                <label class="add-licence-label-text">last name</label>
+                <input type="text" formControlName="last_name" class="form-control"/>
+            </div>
+
+            <div *ngIf="!f.isLifeLongLicence.value" class="form-group add-licence-form-wrap add-licence-expire-date-wrap" >
+                <label class="add-licence-label-text">Expire Date<span style="color: #dc3545"> *</span></label>
+                <div class="add-licence-expire-date-input-wrap">
+                   <input type ="date" formControlName="start_date" [ngModel]="currentD" class="form-control date-wrap-start" [ngClass]="{'is-invalid':submitted && f.start_date.errors}"/>
+                  <div *ngIf="submitted && f.start_date.errors" class="invalid-feedback" >
+                    <div *ngIf="submitted && f.start_date.errors.date_less_than_or_equal"  ></div>
+                  </div>
+                    <p>to</p>
+                    <input type="date" formControlName="end_date"  [ngModel]="currentD" class="form-control date-wrap-end" [ngClass]="{'is-invalid':submitted && f.end_date.errors}" />
+                  <div *ngIf="submitted && f.end_date.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f.end_date.errors.date_less_than_or_equal"></div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="form-group add-licence-form-wrap add-licence-lastname-wrap checkbox">
+              <label class="add-licence-label-text">Unlimited&nbsp;Access</label>
+              <input type="checkbox" formControlName="isLifeLongLicence" class="form-control"/>
+            </div>
+
+            <div mat-dialog-actions="" class="mat-dialog-actions add-licence-button-wrap">
+                <button  class="mat-focus-indicator mat-button mat-button-base" style="cursor: pointer" type="button" mat-button (click)="save()">
+                  <span class="mat-button-wrapper">Save</span><span mat-ripple="" class="mat-ripple mat-button-ripple" ></span>
+                  <span class="mat-button-focus-overlay"></span>
+                </button>
+            </div>
+
+        </div>
+
+    </mat-card>
+
+</div>
+<!-- Wrapper div End MB created -->

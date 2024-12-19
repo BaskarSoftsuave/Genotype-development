@@ -1,0 +1,36 @@
+<div class="profile-Wrapper"> <!-- Wrapper div Strat MB created -->
+<mat-card class="profile-mat-card profile-mat-card-res">
+  <form [formGroup]="profileForm">
+  <div class="profile-img-wrap">
+    <img src="assets/img/download.png" class="header-logo" class="rounded-circle" width="185px" height="185px" alt="User" />
+  </div>
+  <div class="profile-head-text">
+    <p> Profile </p>
+  </div>
+
+
+  <div class="profile-input-container-wrap">
+
+    <div class="profile-input-wrap" >
+      <label  class="profile-input-label-text">First name</label>
+      <input type='text' label="first name" formControlName="first_name" placeholder="First Name" class="profile-input-area">
+    </div>
+
+    <div class="profile-input-wrap">
+      <label class="profile-input-label-text">Last name</label>
+     <input type='text' label="last name" formControlName="last_name" placeholder="Last Name" class="profile-input-area">
+    </div>
+
+    <div class="profile-input-wrap">
+      <label class="profile-input-label-text">Email</label>
+      <input type='text' label="email" placeholder="Email" formControlName="email" class="profile-input-area">
+    </div>
+
+   <!-- <div>
+      <input type='text' label="contact number" placeholder="Contact Number" formControlName="phone" class="profile-input-area">
+    </div>-->
+
+</div>
+  </form>
+</mat-card>
+</div> <!-- Wrapper div End MB created -->

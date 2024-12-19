@@ -1,0 +1,262 @@
+.mat-dialog-actions {
+  padding: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 52px;
+  align-items: center;
+  box-sizing: content-box;
+  margin-bottom: -24px;
+}
+
+.mat-dialog-title {
+  color: #1FB622;
+}
+
+.mat-dialog-content {
+  display: block;
+  margin: 0 0px;
+  padding: 0 30px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+}
+
+.mat-dialog-content input {
+  width: 50%;
+  padding: 8px 0;
+}
+
+button {
+  margin-top: 20px;
+  border: 1px solid var(--blue);
+  background-color: var(--blue);
+  color: #FBFAFB;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 3px 67px;
+  letter-spacing: 1px;
+  transition: transform 80ms ease-in;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-card {
+  /*  position: absolute;
+  box-sizing: border-box;*/
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  /* top: 20px;
+  left: 500px;
+  border-radius: 5px;
+  opacity: 1;
+  color: black;
+  margin-top: 200px;
+  padding: 20px; */
+  background-color: #f1f8ff;
+  /*  transition: all 5s ease-in-out;
+  box-shadow: 0px 0px 0px 5px rgba( 255, 255, 255, 0.4), 0px 4px 20px rgba( 0, 0, 0, 0.33); */
+}
+
+// MB Scss ----------------------------------------------------------->
+::ng-deep {
+  .cdk-overlay-dark-backdrop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #00000094;
+    z-index: 11;
+  }
+
+  .mat-dialog-container {
+    position: absolute;
+    max-height: 100vh;
+    top: 0;
+    left: 0;
+    margin: auto;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+    padding: 0px;
+  }
+}
+
+.add-licence-wrapper {
+  width: 50vw;
+  max-width: 970px;
+  height: auto;
+  // max-height: calc(100vh - 48px);
+  background-color: #f1f8ff;
+  border-radius: 3px;
+
+  .add-licence-mat-card {
+    width: 100%;
+    height: 100%;
+    flex-flow: column;
+    padding: 0;
+
+    .Create-licence-head-wrap {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #DFDFDF;
+      padding: 10px 20px;
+      background-color:var(--blue)
+      ;
+
+      .Create-licence-head-text {
+        margin-bottom: 0px;
+        font-size: 20px;
+        color: #ffffff;
+        font-family: 'Lato';
+        font-weight: 500;
+        font-size: 22px;
+      }
+    }
+  }
+
+  .add-licence-content-wrap {
+    width: 100%;
+    // height: calc(100% - 60px);
+    padding: 0px 25px;
+    padding-bottom: 25px;
+    background-color: #ffff;
+
+    .add-licence-form-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 18px;
+
+      .add-licence-label-text {
+        width: 180px;
+        color: rgba(8, 22, 65, 0.7);
+        font-size: 16px;
+        font-weight: 400;
+        font-family: 'Lato';
+      }
+
+      input {
+        width: 100%;
+        padding-left: 10px;
+        border: none;
+        border-bottom: 1px solid #2b2d4287;
+        background-color: inherit;
+        content:"*";
+      }
+      input.is-invalid{
+        border-bottom: 1px solid #dc3545;
+      }
+
+      input:focus-visible {
+        outline: none;
+      }
+
+      .add-licence-expire-date-input-wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+          font-size: 14px;
+          margin: 0 20px;
+          text-transform: capitalize;
+        }
+
+        input {
+          overflow: visible;
+        }
+        .date-wrap-start {
+          content: 'Start Date';
+          display: block;
+          width: 100%;
+          height: 40px;
+          text-align: left;
+          margin: -18px auto auto 0px;
+          font-family: 'Poppins';
+          font-size: 12px;
+        }
+
+        .date-wrap-end {
+          content: 'End Date';
+          display: block;
+          width: 100%;
+          height: 40px;
+          text-align: left;
+          margin: -18px auto auto 0px;
+          font-family: 'Poppins';
+          font-size: 12px;
+        }
+
+        // .date-wrap-start:hover{
+        //   content: 'Start Date';
+        //   display: block;
+        //   width: 100%;
+        //   height: 50px;
+        //   text-align: left;
+        //   margin: -18px auto auto -10px;
+        //   font-family: 'Poppins';
+        //   font-size: 12px;
+        // }
+
+
+        // .date-wrap-end:hover {
+        //   content: 'End Date';
+        //   display: block;
+        //   width: 100%;
+        //   height: 50px;
+        //   text-align: left;
+        //   margin: -18px auto auto -10px;
+        //   font-family: 'Poppins';
+        //   font-size: 12px;
+        //   overflow: hidden;
+        // }
+      }
+     .add-licence-expire-date-input-wrap.invalid-feedback{
+       border: #FF6B81;
+      }
+    }
+
+    .add-licence-expire-date-wrap {
+      margin-top: 40px;
+    }
+
+    .add-licence-button-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    .checkbox{
+      display: inline-flex;
+      input{
+        height: 22px;
+        border: 1px solid #2b2d4233;
+        cursor: pointer;
+      }
+    }
+
+  }
+
+}
+.invalid-feedback {
+  //display: none;
+  //width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+  color: #dc3575;
+}
+

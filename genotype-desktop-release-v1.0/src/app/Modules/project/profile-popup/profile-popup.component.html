@@ -1,0 +1,94 @@
+
+<div class="add-user-wrapper"> <!--="add Wrapper div Start MB created -->
+
+    <mat-card class="add-user-mat-card">
+
+      <div class="add-user-head-wrap">
+        <p mat-dialog-title class="Create-user-head-text" style="cursor: pointer">{{formTitle}}</p>
+        <i class="fa fa-close" style="font-size:20px; color:white" (click)="close();" ></i>
+      </div>
+
+      <div mat-dialog-content [formGroup]="profileForm" class="add-user-content-wrap" *ngIf=profile>
+
+       <div class="container profile" >
+           <div class="pro_img">
+            <img src="assets/img/download.png" class="img" width="100" height="100" alt="User" style=" margin-right: 20px;" />
+           </div>
+         <div class="info">
+           <div class="add-user-form-wrap">
+             <label for="FirstName" class="add-user-label-text">First Name</label>
+             <input type="text" formControlName="firstName" id="FirstName">
+           </div>
+           <div class="add-user-form-wrap" >
+             <label   for="LastName" class="add-user-label-text">Last Name</label>
+             <input type="text" formControlName="lastName" id="LastName">
+           </div>
+           <div class="add-user-form-wrap">
+             <label for="Email" class="add-user-label-text" >Email</label>
+             <input type="text" formControlName="email" id="Email" [disabled]='disabled' readonly>
+           </div>
+         </div>
+
+
+       </div>
+      </div>
+    <form mat-dialog-content [formGroup]="changePasswordForm" class="add-user-content-wrap"  *ngIf=password>
+      <div class="container password">
+
+          <div class="add-user-form-wrap">
+            <label for="CurrentPassword" class="add-user-label-text">Current Password<span style="color: #dc3545"> *</span></label>
+            <input type="password" formControlName="currentPassword" id="CurrentPassword" pattern="\S(.*\S)?" [ngClass]="{'is-invalid':submitted && f.currentPassword.errors}">
+            <div *ngIf="submitted && f.currentPassword.errors"  class="invalid-feedback">
+              <div *ngIf="f.currentPassword.errors.required"></div>
+            </div>
+          </div>
+
+          <div class="add-user-form-wrap">
+            <label for="NewPassword" class="add-user-label-text">New Password<span style="color: #dc3545"> *</span></label>
+            <input type="password" formControlName="newPassword" id="NewPassword" pattern="\S(.*\S)?" [ngClass]="{'is-invalid':submitted && f.newPassword.errors}">
+            <div *ngIf="submitted && f.newPassword.errors" class="invalid-feedback">
+              <div *ngIf="f.newPassword.errors.required"></div>
+            </div>
+          </div>
+
+          <div class="add-user-form-wrap" >
+            <label   for="ConfirmPassword" class="add-user-label-text">Confirm Password<span style="color: #dc3545"> *</span></label>
+            <input type="password" formControlName="confirmPassword" id="ConfirmPassword" pattern="\S(.*\S)?" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors} ">
+            <div *ngIf="submitted && f.confirmPassword.errors"  class="invalid-feedback">
+              <div *ngIf="f.confirmPassword.errors.required" ></div>
+              <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div></div>
+          </div>
+
+          <div mat-dialog-actions="" class="mat-dialog-actions add-user-button-wrap">
+            <button mat-button class="mat-focus-indicator mat-button mat-button-base" style="cursor: pointer" type="button" (click)="onClickSubmit(changePasswordForm)">
+              <span class="mat-button-wrapper">Save</span>
+              <span mat-ripple="" class="mat-ripple mat-button-ripple" ></span>
+              <span class="mat-button-focus-overlay"></span>
+            </button>
+          </div>
+        </div>
+    </form>
+
+    <!-- <div mat-dialog-content [formGroup]="validityForm" class="licence-content-wrap" *ngIf=validity> -->
+    <div mat-dialog-content  class="licence-content-wrap" *ngIf=validity>
+
+
+      <div class="container validity" >
+
+        <p style="cursor: pointer;">
+            Your licence is expiring on <span style="font-weight: bolder">{{expiryDate}}</span>, please click here to renew it!
+        </p>
+
+        <div mat-dialog-actions="" class="mat-dialog-actions licence-button-wrap">
+          <button mat-button="" mat-dialog-close="" class="mat-focus-indicator mat-button mat-button-base"  type="button">
+            <span class="mat-button-wrapper">Renew License</span>
+            <span mat-ripple="" class="mat-ripple mat-button-ripple" ></span>
+            <span class="mat-button-focus-overlay"></span>
+          </button>
+        </div>
+      </div>
+  </div>
+  </mat-card>
+
+  </div>
+

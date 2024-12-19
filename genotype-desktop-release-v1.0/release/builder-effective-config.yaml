@@ -1,0 +1,32 @@
+directories:
+  output: release/
+  buildResources: build
+asar: false
+productName: GenoType
+files:
+  - filter:
+      - '**/*'
+      - '!**/*.ts'
+      - '!*.map'
+      - '!package.json'
+      - '!package-lock.json'
+extraResources:
+  - from: dist
+    to: app
+    filter:
+      - '**/*'
+win:
+  icon: dist/assets/icons
+  target:
+    - nsis
+portable:
+  splashImage: dist/assets/icons/ga-logo.svg
+mac:
+  icon: dist/assets/icons
+  target:
+    - dmg
+linux:
+  icon: dist/assets/icons
+  target:
+    - AppImage
+electronVersion: 13.6.1

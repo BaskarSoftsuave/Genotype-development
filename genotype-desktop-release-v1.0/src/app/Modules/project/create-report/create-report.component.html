@@ -1,0 +1,103 @@
+<div class="create-rept-wrapper">
+<mat-card>
+  <mat-card-title class="create-rept-head-wrap">
+      <p >
+      <span >{{project_name}}</span>
+     </p>
+     <p ><i (click)=BackToNew() class="fa fa-times close" mat-dialog-close aria-hidden="true"></i>  </p>
+  </mat-card-title>
+  
+  <mat-card-content>
+      <div> <button type="button" class="tab-btn" (click)="loadFileData('FEM')">FAM</button>
+        <button type="button" class="tab-btn" (click)="loadFileData('HEX')">HEX</button>
+        <button type="button" class="tab-btn" (click)="loadFileData('ROX')">ROX</button>
+        <button  *ngIf="graphType === 'true'" type="button" class="tab-btn" (click)="loadFileData('ATTO555')">ATTO 555</button>
+        <button  *ngIf="graphType === 'true'" type="button" class="tab-btn"  (click)="loadFileData('ATTO647')">ATTO 647</button> </div>
+
+    <div class="card-body">
+      <div id="table" class="table-editable">
+      <span class="table-add float-right mb-3 mr-2">
+        <a class="text-success">
+        </a>
+      </span>
+        <!-- <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">SL.no</th>
+            <th class="text-center">A</th>
+            <th class="text-center">B</th>
+            <th class="text-center">C</th>
+            <th class="text-center">D</th>
+            <th class="text-center">E</th>
+            <th class="text-center">F</th>
+            <th class="text-center">G</th>
+            <th class="text-center">H</th>
+            <th class="text-center">I</th>
+            <th class="text-center">J</th>
+          </tr>
+          <tr *ngFor="let person of personList; let id = index">
+            <td>
+              <span (keyup)="changeValue(id, 'slNo', $event)" (blur)="updateList(id, 'slNo', $event)"
+                    contenteditable="true">{{id+1}}</span>
+            </td>
+
+            <td>
+              <span (keyup)="changeValue(id, 'A', $event)" (blur)="updateList(id, 'A', $event)" contenteditable="true">{{person.A}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'B', $event)" (blur)="updateList(id, 'B', $event)">{{person.B}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'C', $event)" (blur)="updateList(id, 'C', $event)">{{person.C}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'D', $event)" (blur)="updateList(id, 'D', $event)">{{person.D}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'E', $event)" (blur)="updateList(id, 'E', $event)">{{person.E}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'F', $event)" (blur)="updateList(id, 'F', $event)">{{person.F}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'G', $event)" (blur)="updateList(id, 'G', $event)">{{person.G}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'H', $event)" (blur)="updateList(id, 'H', $event)">{{person.H}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'I', $event)" (blur)="updateList(id, 'I', $event)">{{person.I}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'J', $event)" (blur)="updateList(id, 'J', $event)">{{person.J}}</span>
+            </td>
+          </tr>
+        </table> -->
+
+        <table class="table table-bordered table-responsive-md table-striped text-center"  *ngIf="personList && personList.length > 0">
+          <tr>
+            <th class="text-center">SL.no</th>
+            <th class="text-center" *ngFor="let cellData of personList[0]; let id = index ; ">{{  id+1 }}</th>
+          </tr>
+          <tr *ngFor="let person of personList; let id = index">
+
+            <td>
+              <span 
+                    contenteditable="true">{{alphabetOrderForNumber[id]}}</span>
+            </td>
+            <td *ngFor="let cellData of person ; let columnIndex = index ;">
+              <span (keyup)="changeValue(id, columnIndex, $event)" (blur)="updateList(id, columnIndex, $event)"
+                    contenteditable="true">{{cellData}}</span>
+            </td>
+
+          </tr>
+        </table>
+         <div class="create-rep-btn-wrap">
+           <button class="generate_report_btn" (click)="generateReport()" > Generate Report </button>
+         </div>
+
+      </div>
+    </div>
+  </mat-card-content>
+
+</mat-card>
+</div>

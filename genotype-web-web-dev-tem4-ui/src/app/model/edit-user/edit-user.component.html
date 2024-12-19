@@ -1,0 +1,45 @@
+
+<div class="add-user-wrapper"> <!--="add Wrapper div Start MB created -->
+
+  <mat-card class="add-user-mat-card">
+
+    <div class="add-user-head-wrap">
+      <p mat-dialog-title class="Create-user-head-text">Edit User</p>
+      <i class="fa fa-close" style="font-size:20px; color:#ffff;cursor: pointer;" (click)="close();" ></i>
+    </div>
+
+    <div mat-dialog-content [formGroup]="editUserForm" class="add-user-content-wrap" >
+
+      <div class="container">
+
+        <div class="add-user-form-wrap">
+          <label for="first_name" class="add-user-label-text">First Name<span style="color: #dc3545"> *</span></label>
+          <input type="text" formControlName="first_name" id="first_name" pattern="\S(.*\S)?" required [ngClass]="{'is-invalid':submitted && f.first_name.errors}"/>
+          <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+          </div>
+        </div>
+
+        <div class="add-user-form-wrap">
+          <label for="last_name" class ="add-user-label-text">last Name</label>
+          <input type="text" formControlName="last_name" id="last_name">
+        </div>
+
+        <div class="add-user-form-wrap">
+          <label for="email" class="add-user-label-text">Email<span style="color: #dc3545"> *</span></label>
+          <input type="text" formControlName="email" id="email"  required [ngClass]="{'is-invalid':submitted && f.email.errors}">
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback"></div>
+        </div>
+
+        <div mat-dialog-actions="" class="mat-dialog-actions add-user-button-wrap">
+          <button mat-button="" mat-dialog-close="" class="mat-focus-indicator mat-button mat-button-base"  type="button" (click) = "save()">
+            <span class="mat-button-wrapper">Save</span>
+            <span mat-ripple="" class="mat-ripple mat-button-ripple" ></span>
+            <span class="mat-button-focus-overlay"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </mat-card>
+
+</div>
