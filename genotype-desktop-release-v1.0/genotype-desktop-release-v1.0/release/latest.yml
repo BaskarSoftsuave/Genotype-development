@@ -1,8 +1,0 @@
-version: 10.0.1
-files:
-  - url: GenoType-Setup-10.0.1.exe
-    sha512: nHZb3jC9k7F3RfgKdtUyD98Jc+Ipf7aPEM5zyreg17Jy1pBF6xRDocU7YANo8o3omN5R0NPMK4UM3bjXkq6kAQ==
-    size: 61897557
-path: GenoType-Setup-10.0.1.exe
-sha512: nHZb3jC9k7F3RfgKdtUyD98Jc+Ipf7aPEM5zyreg17Jy1pBF6xRDocU7YANo8o3omN5R0NPMK4UM3bjXkq6kAQ==
-releaseDate: '2021-10-28T13:53:08.577Z'

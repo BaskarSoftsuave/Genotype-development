@@ -1,7 +1,0 @@
-client/node_modules/
-client/dist/
-New folder/node_modules/
-New folder/dist/
-*.js
-auth/package-lock.json
-.idea/
